@@ -73,11 +73,7 @@ var randomPassword="";
 
 for (var i=0; i<userLength; i++){
     randomPassword =
-    randomPassword + 
-    passwordKey[Math.floor(Math.random()*passwordKey.length)];
-
-    
-
+    randomPassword + passwordKey[Math.floor(Math.random()*passwordKey.length)];
 }
 
 return randomPassword;
@@ -85,13 +81,9 @@ return randomPassword;
 function writePassword(){
     var password = generatePassword();
     var passwordText= document.querySelector("#password");
-
-    passwordText.value = password;
+    
 }
 
 
+}
 generatebtn.addEventListener("click", writePassword);
-
-
-
-
