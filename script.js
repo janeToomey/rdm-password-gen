@@ -13,6 +13,7 @@ var userLower;
 var userUpper;
 var userNumbers;
 var userSpChar;
+var writePassword;
 
 function generatePassword(){
 
@@ -42,6 +43,33 @@ var userSpChar = confirm(
     "Do you want to use special characters in your password? Hit OK to use them in your password and Cancel to exclude them from your password"
 );
 
+while(
+    userUpper === false &&
+    userLower === false &&
+    userNumbers === false &&
+    userSpChar === false) {
+        alert("Oops! You need to select at least one criteria in order to generate a password.");
+
+        var userLower = confirm(
+            "Do you want to use lowercase letters in your password? Hit OK to use them in your password and Cancel to exclude them from your password"
+        );
+        
+        var userUpper = confirm(
+            "Do you want to use uppercase letters in your password? Hit OK to use them in your password and Cancel to exclude them from your password"
+        );
+        
+        var userNumbers = confirm(
+            "Do you want to use numbers in your password? Hit OK to use them in your password and Cancel to exclude them from your password"
+        );
+        
+        var userSpChar = confirm(
+            "Do you want to use special characters in your password? Hit OK to use them in your password and Cancel to exclude them from your password"
+        );
+        
+
+    }
+
+
 
 
 
@@ -50,17 +78,17 @@ var userSpChar = confirm(
 var passwordKey = [];
 
 if (userLower){
-    passwordKey = passwordKey.concat(lowerChar);
+    passwordKey = passwordKey.concat(lowerChar)
 }
 
 if (userUpper){
-    passwordKey =passwordKey.concat(upperChar);
+    passwordKey =passwordKey.concat(upperChar)
 }
 if (userNumbers){
-    passwordKey = passwordKey.concat(numberChar);
+    passwordKey = passwordKey.concat(numberChar)
 }
 if (userSpChar){
-    passwordKey = passwordKey.concat(specialChar);
+    passwordKey = passwordKey.concat(specialChar)
 }
 
 
@@ -77,9 +105,10 @@ return randomPassword;
 function writePassword(){
     var password = generatePassword();
     var passwordText= document.querySelector("#password");
-    
+passwordText.value = password;
     
 }
+
 
 
 }
